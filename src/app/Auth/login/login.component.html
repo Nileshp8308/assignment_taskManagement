@@ -1,0 +1,58 @@
+<!-- <p>Login</p> -->
+<!-- <p>login</p>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <form action="">
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                    <mat-label>Username</mat-label>
+                    <mat-form-field appearance="outline" class="mt-2">
+                        <input matInput formControlName="value02" placeholder="valueTwo" #input>
+       
+                    </mat-form-field>
+
+                    <mat-form-field>
+                        <mat-label>Filter</mat-label>
+                        <input matInput placeholder="Ex. Grocery" #input>
+                    </mat-form-field>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div> -->
+
+<div class="container">
+    <div class="login-form">
+        <form [formGroup]="loginForm">
+            <h1>Login</h1>
+            <div class="content">
+                <div class="input-field">
+                    <!-- <input type="email" placeholder="Email" autocomplete="nope"> -->
+                    <!-- <mat-label>Username</mat-label> -->
+                    <mat-form-field appearance="outline" class="mt-2" id="username">
+                        <input matInput formControlName="userName" placeholder="User Name" #input>
+                        <mat-error *ngIf="form['userName'].hasError('required')">
+                            The field is required
+                        </mat-error>
+                    </mat-form-field>
+
+                </div>
+                <div class="input-field">
+                    <!-- <input type="password" placeholder="Password" autocomplete="new-password"> -->
+                    <mat-form-field appearance="outline" class="mt-2" id="username">
+                        <input matInput formControlName="password" placeholder="Password" #input>
+                        <mat-error *ngIf="form['password'].hasError('required')">
+                            The field is required
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <!-- <a href="#" class="link">Forgot Your Password?</a> -->
+            </div>
+            <div class="action">
+                <!-- <button>Register</button> -->
+                <button type="submit" (click)="submit()">Sign in</button>
+            </div>
+        </form>
+    </div>
+</div>
